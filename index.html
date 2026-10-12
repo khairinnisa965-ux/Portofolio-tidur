@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khairinnisa (IXB) | Professional Sleep Athlete Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sleep: {
+                            night: '#080B1A',
+                            dark: '#0F142A',
+                            card: '#181F3B',
+                            purple: '#7C3AED',
+                            indigo: '#4F46E5',
+                            moon: '#FDE047',
+                            soft: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Outfit', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #080B1A;
+            color: #F8FAFC;
+        }
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #A855F7 0%, #3B82F6 50%, #FDE047 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(24, 31, 59, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.2);
+        }
+        .pillow-glow {
+            box-shadow: 0 0 30px rgba(253, 224, 71, 0.15);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-sleep-night text-slate-100 antialiased overflow-x-hidden selection:bg-sleep-purple selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card bg-opacity-90 transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-black font-heading tracking-wider flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sleep-purple to-sleep-moon flex items-center justify-center text-sleep-night shadow-lg">
+                    <i class="fa-solid fa-bed text-lg"></i>
+                </div>
+                <span>KHAIRINNISA<span class="text-sleep-moon">.</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 font-semibold text-sm tracking-wide text-sleep-soft">
+                <a href="#about" class="hover:text-sleep-moon transition-colors">TENTANG ATLET</a>
+                <a href="#stats" class="hover:text-sleep-moon transition-colors">STATISTIK TIDUR</a>
+                <a href="#records" class="hover:text-sleep-moon transition-colors">REKOR PRIBADI</a>
+                <a href="#trophies" class="hover:text-sleep-moon transition-colors">TROFI & PRESTASI</a>
+                <a href="#contact" class="hover:text-sleep-moon transition-colors">AJAK BOBO</a>
+            </div>
+
+            <!-- CTA Badge -->
+            <div class="hidden md:flex items-center gap-3">
+                <span class="bg-sleep-purple/20 border border-sleep-purple/40 text-purple-300 font-bold text-xs px-3.5 py-1.5 rounded-full flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    Kelas IXB • Sedang Hibernasi
+                </span>
+                <a href="#contact" class="bg-gradient-to-r from-sleep-purple to-sleep-indigo text-white font-bold py-2.5 px-6 rounded-full hover:opacity-90 transition-all shadow-lg shadow-sleep-purple/30 text-sm tracking-wider">
+                    <i class="fa-solid fa-moon mr-1"></i> SNOOZE
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none text-sleep-soft hover:text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-800 flex flex-col gap-4 pt-4 text-center">
+            <div class="inline-block mx-auto bg-sleep-purple/20 text-purple-300 font-bold text-xs px-3 py-1 rounded-full mb-2">
+                <i class="fa-solid fa-graduation-cap mr-1"></i> Siswi Kelas IXB
+            </div>
+            <a href="#about" class="mobile-link text-sleep-soft hover:text-sleep-moon transition-colors">TENTANG ATLET</a>
+            <a href="#stats" class="mobile-link text-sleep-soft hover:text-sleep-moon transition-colors">STATISTIK TIDUR</a>
+            <a href="#records" class="mobile-link text-sleep-soft hover:text-sleep-moon transition-colors">REKOR PRIBADI</a>
+            <a href="#trophies" class="mobile-link text-sleep-soft hover:text-sleep-moon transition-colors">TROFI & PRESTASI</a>
+            <a href="#contact" class="mobile-link text-sleep-soft hover:text-sleep-moon transition-colors">KONTAK</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden">
+        <!-- Ambient Glowing Background Elements -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-sleep-purple/25 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 -right-20 w-96 h-96 bg-sleep-moon/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Text Content -->
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-sleep-purple/15 border border-sleep-purple/30 text-purple-300 px-4 py-2 rounded-full text-xs md:text-sm font-semibold tracking-widest uppercase mb-6">
+                    <i class="fa-solid fa-cloud-moon text-sleep-moon"></i> Professional Sleep Athlete • Kelas IXB
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black font-heading leading-tight mb-6 uppercase tracking-tight">
+                    Mimpi Tanpa Batas, <br>
+                    <span class="gradient-text">Tidur Nyenyak Sepanjang Hari.</span>
+                </h1>
+                <p class="text-sleep-soft text-base sm:text-lg max-w-2xl mb-8 leading-relaxed mx-auto lg:mx-0">
+                    Selamat datang di portofolio resmi <span class="text-white font-semibold">Khairinnisa</span> dari <span class="text-sleep-moon font-semibold">Kelas IXB</span>. Atlet tidur profesional berprestasi yang berdedikasi mencapai REM sleep maksimal, juara rebahan, dan master ketiduran di kelas jam kosong.
+                </p>
+
+                <!-- Quick Stats Badge Bar -->
+                <div class="grid grid-cols-3 gap-4 max-w-lg mb-10 mx-auto lg:mx-0 text-left">
+                    <div class="glass-card p-4 rounded-2xl border-l-4 border-sleep-purple">
+                        <p class="text-2xl sm:text-3xl font-black font-heading text-white">14+ Jam</p>
+                        <p class="text-xs text-sleep-soft uppercase tracking-wider font-semibold">Rekor Tidur Weekend</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-l-4 border-sleep-moon">
+                        <p class="text-2xl sm:text-3xl font-black font-heading text-white">IXB</p>
+                        <p class="text-xs text-sleep-soft uppercase tracking-wider font-semibold">Kelas & Domisili Kasur</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl border-l-4 border-indigo-500">
+                        <p class="text-2xl sm:text-3xl font-black font-heading text-white">100%</p>
+                        <p class="text-xs text-sleep-soft uppercase tracking-wider font-semibold">Kenyamanan Bantal</p>
+                    </div>
+                </div>
+
+                <!-- Call To Actions -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#trophies" class="bg-gradient-to-r from-sleep-purple to-sleep-indigo text-white font-bold py-4 px-8 rounded-full hover:shadow-lg hover:shadow-sleep-purple/40 transition-all flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-trophy text-sleep-moon"></i> Koleksi Piala Tidur
+                    </a>
+                    <a href="#about" class="glass-card text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+                        Profil Khairinnisa <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Visual Image Frame -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md animate-float">
+                    <!-- Glowing Outer Ring -->
+                    <div class="absolute -inset-2 bg-gradient-to-r from-sleep-purple via-indigo-500 to-sleep-moon rounded-3xl blur opacity-40 transform rotate-3"></div>
+                    <div class="relative rounded-3xl overflow-hidden glass-card p-4 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=800" 
+                             alt="Khairinnisa Sleeping Athlete" 
+                             class="w-full h-[420px] object-cover rounded-2xl border border-white/5"
+                             onerror="this.src='https://placehold.co/600x800/181F3B/FDE047?text=Khairinnisa+Tidur+IXB'">
+                        <!-- Floating Badge on Image -->
+                        <div class="absolute bottom-8 left-8 right-8 glass-card p-4 rounded-2xl flex items-center gap-4 border border-white/10 shadow-2xl">
+                            <div class="bg-sleep-moon/20 text-sleep-moon p-3.5 rounded-xl text-xl">
+                                <i class="fa-solid fa-face-smile-beam"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sleep-soft uppercase tracking-widest font-bold">Khairinnisa • IXB</p>
+                                <p class="text-xs font-semibold text-white mt-0.5">"Jangan ganggu, sedang memecahkan rekor REM sleep."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-sleep-dark/50 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1520206183501-b80df61043c2?auto=format&fit=crop&q=80&w=800" 
+                             alt="Khairinnisa Cozy Bed" 
+                             class="rounded-3xl w-full h-[400px] object-cover glass-card"
+                             onerror="this.src='https://placehold.co/600x600/181F3B/A855F7?text=Kasur+Khairinnisa+IXB'">
+                        <div class="absolute -bottom-6 -right-6 bg-gradient-to-tr from-sleep-purple to-sleep-indigo text-white p-6 rounded-2xl shadow-2xl hidden sm:block">
+                            <p class="text-3xl font-black font-heading text-sleep-moon">IXB</p>
+                            <p class="text-xs uppercase font-bold tracking-wider">Siswa & Duta Rebahan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-sleep-moon font-bold tracking-widest text-sm uppercase mb-2">Mengenal Lebih Dekat</p>
+                    <h2 class="text-3xl sm:text-5xl font-black font-heading mb-6 uppercase">Tentang Khairinnisa</h2>
+                    <p class="text-sleep-soft text-base leading-relaxed mb-6">
+                        Khairinnisa adalah siswi berbakat dari <span class="text-white font-semibold">Kelas IXB</span> yang mendedikasikan hidupnya untuk seni dan olahraga tidur. Bagi Khairinnisa, tidur bukan sekadar mengistirahatkan mata, melainkan sebuah cabang olahraga mental yang membutuhkan kasur empuk, selimut hangat, dan suasana yang hening.
+                    </p>
+                    <p class="text-sleep-soft text-base leading-relaxed mb-8">
+                        Di tengah kesibukan tugas sekolah IXB, Khairinnisa selalu berhasil menjaga ritme sirkadian dengan sempurna. Ia memegang rekor tidur paling cepat saat mendengarkan penjelasan materi rumit, serta konsisten meraih podium tertinggi dalam kategori "Power Nap 15 Menit".
+                    </p>
+
+                    <!-- Feature Pillars -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="glass-card p-4 rounded-2xl flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sleep-purple/20 rounded-xl flex items-center justify-center text-purple-300 text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Power Nap Master</h4>
+                                <p class="text-xs text-sleep-soft">Merem 5 menit, terasa 5 jam</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sleep-moon/20 rounded-xl flex items-center justify-center text-sleep-moon text-xl">
+                                <i class="fa-solid fa-feather text-sleep-moon"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Spesialis Bantal Bolak-Balik</h4>
+                                <p class="text-xs text-sleep-soft">Selalu mencari sisi bantal yang dingin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sleep Stats & Records Section -->
+    <section id="records" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="text-sleep-moon font-bold tracking-widest text-sm uppercase mb-2">Pencapaian Durasi Terbaik</p>
+                <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase">Personal Best (PB) Tidur</h2>
+                <div class="w-20 h-1 bg-sleep-moon mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- PB Card 1 -->
+                <div class="glass-card p-6 rounded-3xl text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-sleep-purple"></div>
+                    <div class="w-14 h-14 mx-auto mb-4 bg-sleep-purple/20 rounded-2xl flex items-center justify-center text-purple-300 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-sleep-soft uppercase tracking-wider mb-1">Kecepatan Ketiduran</h3>
+                    <p class="text-3xl sm:text-4xl font-black font-heading text-white my-2">2.5 Detik</p>
+                    <p class="text-xs text-sleep-moon font-semibold">Tembus Rekor IXB</p>
+                    <p class="text-xs text-sleep-soft mt-4">Kepala nempel bantal langsung mimpi</p>
+                </div>
+
+                <!-- PB Card 2 -->
+                <div class="glass-card p-6 rounded-3xl text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-sleep-moon"></div>
+                    <div class="w-14 h-14 mx-auto mb-4 bg-sleep-moon/20 rounded-2xl flex items-center justify-center text-sleep-moon text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bed font-black"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-sleep-soft uppercase tracking-wider mb-1">Maraton Tidur Weekend</h3>
+                    <p class="text-3xl sm:text-4xl font-black font-heading text-white my-2">14 Jam</p>
+                    <p class="text-xs text-sleep-moon font-semibold">Non-Stop Tanpa Bangun</p>
+                    <p class="text-xs text-sleep-soft mt-4">Hanya bangun untuk ambil minum</p>
+                </div>
+
+                <!-- PB Card 3 -->
+                <div class="glass-card p-6 rounded-3xl text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-indigo-500"></div>
+                    <div class="w-14 h-14 mx-auto mb-4 bg-indigo-500/20 rounded-2xl flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-sleep-soft uppercase tracking-wider mb-1">Kekuatan Imun Alarm</h3>
+                    <p class="text-3xl sm:text-4xl font-black font-heading text-white my-2">12 Alarm</p>
+                    <p class="text-xs text-indigo-300 font-semibold">Snooze 5 Menitan</p>
+                    <p class="text-xs text-sleep-soft mt-4">Tetap tidur nyenyak di tengah bising</p>
+                </div>
+
+                <!-- PB Card 4 -->
+                <div class="glass-card p-6 rounded-3xl text-center group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-emerald-400"></div>
+                    <div class="w-14 h-14 mx-auto mb-4 bg-emerald-400/20 rounded-2xl flex items-center justify-center text-emerald-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-sleep-soft uppercase tracking-wider mb-1">Kualitas REM Sleep</h3>
+                    <p class="text-3xl sm:text-4xl font-black font-heading text-white my-2">99.9%</p>
+                    <p class="text-xs text-emerald-300 font-semibold">Mimpi Full HD 4K</p>
+                    <p class="text-xs text-sleep-soft mt-4">Lengkap dengan petualangan fiksi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophies & Awards Showcase -->
+    <section id="trophies" class="py-20 bg-sleep-dark/60 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="text-sleep-moon font-bold tracking-widest text-sm uppercase mb-2">Koleksi Kejuaraan Tidur</p>
+                <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase">Trofi & Penghargaan</h2>
+                <p class="text-sleep-soft mt-4">Bukti dedikasi, konsistensi, dan ketahanan tidur luar biasa dari Khairinnisa (IXB).</p>
+            </div>
+
+            <!-- Trophy Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Trophy 1 -->
+                <div class="glass-card rounded-3xl p-6 relative border border-sleep-moon/30 pillow-glow transition-all hover:scale-105 duration-300">
+                    <div class="absolute -top-5 right-6 bg-gradient-to-r from-sleep-moon to-amber-400 text-slate-900 font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-wider shadow-lg">
+                        Juara 1 Utama
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-tr from-yellow-500 to-amber-200 rounded-2xl flex items-center justify-center text-slate-900 text-4xl mb-6 shadow-xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <span class="text-sleep-moon text-xs font-bold uppercase tracking-widest">Kategori Hibernasi Musim Hujan</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2">Trofi Emas Tidur Terpulas Antar Kelas</h3>
+                    <p class="text-sleep-soft text-sm mb-4">Berhasil mempertahankan posisi tidur tanpa berganti gaya selama 8 jam berturut-turut di cuaca dingin.</p>
+                    <div class="pt-4 border-t border-slate-800 flex justify-between text-xs text-sleep-soft">
+                        <span><i class="fa-regular fa-calendar"></i> Semester Genap IXB</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Kamar Utama</span>
+                    </div>
+                </div>
+
+                <!-- Trophy 2 -->
+                <div class="glass-card rounded-3xl p-6 relative border border-slate-400/20 transition-all hover:scale-105 duration-300">
+                    <div class="absolute -top-5 right-6 bg-slate-300 text-slate-900 font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-wider shadow-lg">
+                        Juara 2 Perak
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-tr from-slate-400 to-slate-100 rounded-2xl flex items-center justify-center text-slate-900 text-4xl mb-6 shadow-xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-purple-400 text-xs font-bold uppercase tracking-widest">Kategori Jam Kosong Sekolah</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2">Trofi Stealth Nap Kelas IXB</h3>
+                    <p class="text-sleep-soft text-sm mb-4">Kemampuan tidur dengan posisi duduk tegak memegang pulpen tanpa ketahuan teman sekelas.</p>
+                    <div class="pt-4 border-t border-slate-800 flex justify-between text-xs text-sleep-soft">
+                        <span><i class="fa-regular fa-calendar"></i> Pekan Ujian IXB</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Meja Belakang IXB</span>
+                    </div>
+                </div>
+
+                <!-- Trophy 3 -->
+                <div class="glass-card rounded-3xl p-6 relative border border-amber-700/30 transition-all hover:scale-105 duration-300">
+                    <div class="absolute -top-5 right-6 bg-amber-700 text-white font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-wider shadow-lg">
+                        Juara 3 Perunggu
+                    </div>
+                    <div class="w-20 h-20 bg-gradient-to-tr from-amber-700 to-yellow-600 rounded-2xl flex items-center justify-center text-white text-4xl mb-6 shadow-xl">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Kategori Marathon Weekend</span>
+                    <h3 class="text-xl font-bold text-white mt-1 mb-2">Trofi Rebahan Bebas Gangguan</h3>
+                    <p class="text-sleep-soft text-sm mb-4">Sukses mengabaikan 15 panggilan telepon dan suara sirine demi menyelesaikan siklus mimpi.</p>
+                    <div class="pt-4 border-t border-slate-800 flex justify-between text-xs text-sleep-soft">
+                        <span><i class="fa-regular fa-calendar"></i> Libur Semester</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Kasur Empuk</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List of Other Sleep Accomplishments -->
+            <div class="mt-12 glass-card rounded-3xl p-6 md:p-8 border border-white/10">
+                <h3 class="text-xl font-bold font-heading mb-6 flex items-center gap-3 text-white">
+                    <i class="fa-solid fa-list-check text-sleep-moon"></i> Sertifikat & Rekor Tidur Lainnya
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-slate-800 gap-2">
+                        <div>
+                            <p class="font-bold text-white">Sertifikat Ketahanan Bangun Siang - Level Maestro</p>
+                            <p class="text-xs text-sleep-soft">Mencapai rekor bangun jam 12 siang tanpa rasa bersalah sama sekali</p>
+                        </div>
+                        <span class="text-xs bg-sleep-purple/30 text-purple-300 border border-sleep-purple/40 px-3 py-1 rounded-full font-semibold">Tahun 2026</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-slate-800 gap-2">
+                        <div>
+                            <p class="font-bold text-white">Penghargaan Koleksi Bantal Paling Empuk Se-IXB</p>
+                            <p class="text-xs text-sleep-soft">Memiliki susunan 4 bantal + 2 guling pendukung ergonomi tidur sempurna</p>
+                        </div>
+                        <span class="text-xs bg-sleep-purple/30 text-purple-300 border border-sleep-purple/40 px-3 py-1 rounded-full font-semibold">Tahun 2025</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                        <div>
+                            <p class="font-bold text-white">Lencana Duta Makanan Penutup Sebelum Tidur</p>
+                            <p class="text-xs text-sleep-soft">Latihan rutin minum susu hangat sebelum memejamkan mata</p>
+                        </div>
+                        <span class="text-xs bg-sleep-purple/30 text-purple-300 border border-sleep-purple/40 px-3 py-1 rounded-full font-semibold">Tahun 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Info -->
+                <div class="lg:col-span-5">
+                    <p class="text-sleep-moon font-bold tracking-widest text-sm uppercase mb-2">Pesan & Undangan Bobo</p>
+                    <h2 class="text-3xl sm:text-5xl font-black font-heading uppercase mb-6">Hubungi Khairinnisa</h2>
+                    <p class="text-sleep-soft mb-8 leading-relaxed">
+                        Ingin mengajak Khairinnisa latihan tidur bareng, mau tanya rekomendasi bantal terbaik, atau sekadar membangunkan untuk piket kelas IXB? Kirimkan pesan di bawah ini!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sleep-purple/20 rounded-2xl flex items-center justify-center text-purple-300 text-xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sleep-soft uppercase">Status Sekolah</p>
+                                <p class="text-white font-bold">Siswi Aktif Kelas IXB</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sleep-purple/20 rounded-2xl flex items-center justify-center text-purple-300 text-xl">
+                                <i class="fa-solid fa-bed"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sleep-soft uppercase">Markas Tidur</p>
+                                <p class="text-white font-bold">Zone Kasur IXB - Bed 01</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-sleep-purple/20 rounded-2xl flex items-center justify-center text-purple-300 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-sleep-soft uppercase">Email Atlet</p>
+                                <p class="text-white font-bold">khairinnisa.sleep.ixb@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Contact -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 relative">
+                        <!-- Custom Alert Box -->
+                        <div id="alert-box" class="hidden mb-6 p-4 rounded-2xl text-sm font-semibold"></div>
+
+                        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-sleep-soft uppercase mb-2">Nama Pengirim</label>
+                                    <input type="text" required placeholder="Teman IXB / Sahabat Kasur" class="w-full bg-sleep-dark/80 border border-slate-800 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-sleep-purple transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-sleep-soft uppercase mb-2">Email Anda</label>
+                                    <input type="email" required placeholder="email@contoh.com" class="w-full bg-sleep-dark/80 border border-slate-800 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-sleep-purple transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-sleep-soft uppercase mb-2">Perihal / Alasan Bangunin</label>
+                                <input type="text" required placeholder="Contoh: Ada Tugas Kelompok IXB!" class="w-full bg-sleep-dark/80 border border-slate-800 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-sleep-purple transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-sleep-soft uppercase mb-2">Pesan Bangun Tidur</label>
+                                <textarea rows="4" required placeholder="Khairinnisa bangun, bantalmu sudah dipanggil..." class="w-full bg-sleep-dark/80 border border-slate-800 rounded-2xl px-4 py-3.5 text-white focus:outline-none focus:border-sleep-purple transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-sleep-purple via-indigo-600 to-sleep-purple text-white font-bold py-4 rounded-2xl hover:opacity-90 transition-opacity shadow-lg shadow-sleep-purple/30 uppercase tracking-wider flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bell"></i> Kirim Pesan & Bunyikan Alarm
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-900 text-center text-sleep-soft text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Khairinnisa (Kelas IXB) - Professional Sleep Athlete. Sleep Well, Dream Big!</p>
+            <div class="flex gap-4 text-lg text-sleep-soft">
+                <a href="#" class="hover:text-sleep-moon transition-colors"><i class="fa-solid fa-moon"></i></a>
+                <a href="#" class="hover:text-sleep-moon transition-colors"><i class="fa-solid fa-bed"></i></a>
+                <a href="#" class="hover:text-sleep-moon transition-colors"><i class="fa-solid fa-cloud"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submission Handling (Without alert)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('alert-box');
+            
+            // Show Sleep Alarm Notification in UI
+            alertBox.className = "mb-6 p-4 rounded-2xl text-sm font-semibold bg-sleep-purple/30 border border-sleep-purple text-purple-200 block animate-bounce";
+            alertBox.innerHTML = "<i class='fa-solid fa-bell mr-2 text-sleep-moon'></i> Kring! Pesan berhasil dikirim. Khairinnisa (IXB) akan membalasnya setelah selesai siklus tidur REM!";
+
+            // Reset Form
+            document.getElementById('contact-form').reset();
+
+            // Auto Hide Alert
+            setTimeout(() => {
+                alertBox.className = "hidden";
+            }, 6000);
+        }
+    </script>
+</body>
+  </html>
